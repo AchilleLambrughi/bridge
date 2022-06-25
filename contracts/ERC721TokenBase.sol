@@ -2,7 +2,7 @@ pragma solidity ^0.8.0;
 
 import '@openzeppelin/contracts/token/ERC721/ERC721.sol';
 
-contract NFTokenBase is ERC721 {
+contract ERC721TokenBase is ERC721 {
   address public admin;
 
   constructor(string memory name, string memory symbol) ERC721(name, symbol) {

@@ -1,5 +1,5 @@
-const NFT1DLT = artifacts.require('./NFT1DLT.sol');
-const NFT = require('../build/contracts/NFT1DLT.json');
+const NFT1DLT = artifacts.require('./ERC721Token1DLT.sol');
+const NFT = require('../build/contracts/ERC721Token1DLT.json');
 
 module.exports = async done => {
   const [recipient, _] = await web3.eth.getAccounts();

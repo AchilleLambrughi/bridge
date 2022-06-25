@@ -18,7 +18,7 @@ NB: the networks are defined in `truffle-config.js`
 
 Before executing the transfer of the NFT we check its existence in the two blockchain 
 
-`truffle exec scripts/1DLT-token-balance.js --network qpq`
+`truffle exec scripts/erc721-1dlt-token-balance.js --network qpq`
 
 Output:
 ```
@@ -26,7 +26,7 @@ Using network 'qpq'.
 
 0
 ```
-`truffle exec scripts/eth-token-balance.js --network ethTestnet`
+`truffle exec scripts/erc721-eth-token-balance.js --network ethTestnet`
 
 Output:
 ```
@@ -40,11 +40,11 @@ We have no tokens in the account on 1DLT, while we have the token on Ethereum. T
 
 Now, in a new terminal, start the bridge: 
 
-`node scripts/eth-1DLT-bridge.js`
+`node scripts/erc721-eth-1dlt-bridge.js`
 
 And in the first terminal execute the transfer: 
 
-`truffle exec scripts/eth-1DLT-transfer.js --network ethTestnet`
+`truffle exec scripts/erc721-eth-1dlt-transfer.js --network ethTestnet`
 
 After few seconds the bridge script should output the following: 
 
@@ -59,7 +59,7 @@ Transaction hash: 0x<Hash>
 ```
 At the end, we can check if the token has been transferred from Ethereum to 1DLT: 
 
-`truffle exec scripts/eth-token-balance.js --network ethTestnet`
+`truffle exec scripts/erc721-eth-token-balance.js --network ethTestnet`
 
 Output:
 ```
@@ -67,7 +67,7 @@ Using network 'ethTestnet'.
 
 0
 ```
-`truffle exec scripts/1DLT-token-balance.js --network qpq`
+`truffle exec scripts/erc721-1dlt-token-balance.js --network qpq`
 
 Output:
 ```
