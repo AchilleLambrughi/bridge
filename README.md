@@ -1,3 +1,4 @@
+## README OUT OF DATE
 **<span style="color:red">Important!</span> before running the demo, please make sure you have filled in the missing information in files** `truffle-config.js` **and** `scripts/eth-1DLT-bridge.js`
 
 # Bridge 

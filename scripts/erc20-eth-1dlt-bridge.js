@@ -1,10 +1,12 @@
 const Web3 = require('web3');
 const BridgeEth = require('../build/contracts/BridgeEth.json');
 const Bridge1DLT = require('../build/contracts/Bridge1DLT.json');
+const path = require('path')
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
-const web3Eth = new Web3('wss://ropsten.infura.io/ws/v3/037f6c631f3c4b94b7b41b1d22752139');
+const web3Eth = new Web3(process.env.ETHEREUM_RPC);
 const web3OneDLT = new Web3('http://127.0.0.1:8545');
-const adminPrivKey = '4547602672f525561a7864fc42de43b73542cc546a6d7c56b2804a938297d2dc';
+const adminPrivKey = process.env.SIGNER_PRIVATE_KEY;
 const { address: admin } = web3OneDLT.eth.accounts.wallet.add(adminPrivKey);
 
 const bridgeEth = new web3Eth.eth.Contract(

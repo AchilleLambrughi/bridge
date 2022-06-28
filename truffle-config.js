@@ -1,5 +1,7 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
-const mnemonic = 'enact nuclear cliff sea goose cherry glove provide seed net loop broken';
+require('dotenv').config();
+const mnemonic = process.env.MNEMONIC;
+const ethereum_rpc = process.env.HTTP_ETHEREUM_RPC;
 /**
  * Use this file to configure your truffle project. It's seeded with some
  * common settings for different networks and features like migrations,
@@ -64,7 +66,7 @@ module.exports = {
     ethTestnet: {
       provider: () => new HDWalletProvider(
         mnemonic, 
-        'https://ropsten.infura.io/v3/037f6c631f3c4b94b7b41b1d22752139',
+        ethereum_rpc,
         0,
         1
       ),
